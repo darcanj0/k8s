@@ -15,9 +15,4 @@ spec:
     ports:
       - containerPort: 8080
     env:
-      - name: "MYSQL_ROOT_PASSWORD"
-        value: "Senha123!"
-      - name: "MYSQL_DATABASE"
-        value: "empresa"
-      - name: "MYSQL_PASSWORD"
-        value: "empresa@Senha123!"
+
