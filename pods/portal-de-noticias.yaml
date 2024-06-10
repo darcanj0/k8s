@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: portal-de-noticias
+  labels:
+    app: portal-de-noticias
+    any-key: any-value
+spec:
+  containers:
+  - name: portal-de-noticias-container
+    image: aluracursos/portal-noticias:1
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080

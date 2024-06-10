@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-portal-noticias
+spec:
+  type: ClusterIP
+  selector:
+    app: portal-de-noticias
+    any-key: any-value
+  ports:
+  - port: 80
+    targetPort: 8080
+
+
+# REMEMBER: This is a cluster ip service
+
+# its purpose is to remap the pod ip, which is volatile,
+# to a constant ip
