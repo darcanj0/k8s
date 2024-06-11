@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: portal-noticias-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+        app: portal-de-noticias
+        any-key: any-value
+  template:
+    metadata: 
+      name: portal-de-noticias
+      labels:
+        app: portal-de-noticias
+        any-key: any-value
+      spec:
+        containers:
+          - name: portal-de-noticias-container
+            image: aluracursos/portal-noticias:1
+            resources:
+              limits:
+                memory: "128Mi"
+                cpu: "500m"
+            ports:
+              - containerPort: 8080
+            envFrom: 
+              - configMapRef:
+                  name: portal-noticias-configmap

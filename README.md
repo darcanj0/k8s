@@ -1,3 +1,4 @@
+//TODO: update readme for v2
 
 # k8s
 

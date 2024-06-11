@@ -1,5 +1,7 @@
 #!/bin/bash
 
+//TODO: update run for v2
+
 # Clone the project
 git clone https://github.com/darcanj0/k8s.git
 
