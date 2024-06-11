@@ -1,22 +1,22 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: ReplicaSet
 metadata:
-  name: portal-noticias-deployment
+  name: news-portal-replicaset
 spec:
   replicas: 3
   selector:
     matchLabels:
-        app: portal-de-noticias
+        app: news-portal
         any-key: any-value
   template:
     metadata: 
-      name: portal-de-noticias
+      name: news-portal
       labels:
-        app: portal-de-noticias
+        app: news-portal
         any-key: any-value
       spec:
         containers:
-          - name: portal-de-noticias-container
+          - name: news-portal-container
             image: aluracursos/portal-noticias:1
             resources:
               limits:
@@ -26,4 +26,4 @@ spec:
               - containerPort: 8080
             envFrom: 
               - configMapRef:
-                  name: portal-noticias-configmap
+                  name: news-portal-configmap
