@@ -18,4 +18,7 @@ kubectl rollout history deployment db-news-deployment
 echo "Annotating db deployment"
 kubectl annotate deployment db-news-deployment kubernetes.io/change-cause="DB News v2.0.0 Deployment"
 
+echo "Checkout new deployments"
+kubectl rollout history deployment db-news-deployment
+
 echo "checkout pods, run: kubectl get pods"

@@ -18,5 +18,8 @@ kubectl rollout history deployment news-system-deployment
 echo "Annotating system deployment"
 kubectl annotate deployment news-system-deployment kubernetes.io/change-cause="News System v2.0.0 Deployment"
 
+echo "Checkout new deployments"
+kubectl rollout history deployment news-system-deployment
+
 echo "checkout pods, run: kubectl get pods"
 echo "checkout portal app, go to: http://{localhost_or_minikube_Internal_ip}:31750"
