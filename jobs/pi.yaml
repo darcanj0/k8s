@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pi-pod
+  labels:
+    name: pi-pod
+spec:
+  containers:
+  - name: pi-pod
+    image: perl
+    command: ["perl", "-Mbignum=bpi", "-wle", "print bpi(2000)"] #calcula pi
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
