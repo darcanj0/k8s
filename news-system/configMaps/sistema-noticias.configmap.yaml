@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: sistema-noticias-configmap
 data:
-  HOST_DB: svc-db-noticias:90
+  HOST_DB: db-news-service:90
   USER_DB: root
   PASS_DB: Senha123!
   DATABASE_DB: empresa

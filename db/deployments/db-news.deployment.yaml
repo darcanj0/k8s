@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-news-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db-news
+  template:
+    metadata:
+      name: db-news
+      labels:
+        app: db-news
+    spec:
+      containers:
+      - name: db-news-container
+        image: aluracursos/mysql-db:1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3306
