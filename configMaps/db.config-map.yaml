@@ -5,4 +5,4 @@ metadata:
 data:
   MYSQL_ROOT_PASSWORD: Senha123!
   MYSQL_DATABASE: empresa
-  MYSQL_PASSWORD: empresa@Senha123!
+  MYSQL_PASSWORD: Senha123!

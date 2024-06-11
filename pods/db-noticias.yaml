@@ -13,7 +13,7 @@ spec:
         memory: "128Mi"
         cpu: "500m"
     ports:
-      - containerPort: 8080
+      - containerPort: 3306
     envFrom:
       - configMapRef:
           name: db-noticias-configmap
