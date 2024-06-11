@@ -14,5 +14,6 @@ spec:
         cpu: "500m"
     ports:
       - containerPort: 8080
-    env:
-
+    envFrom:
+      - configMapRef:
+          name: db-noticias-configmap
