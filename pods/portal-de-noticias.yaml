@@ -15,3 +15,6 @@ spec:
         cpu: "500m"
     ports:
       - containerPort: 8080
+    envFrom: 
+      - configMapRef:
+          name: portal-noticias-configmap
