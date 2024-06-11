@@ -1,8 +1,10 @@
 #!/bin/bash
 
 #delete previous replicaset
-echo "Deleting v1 replicaset..."
-kubectl delete -f ../replicaSets/news-portal.replicaset.yaml
+echo "Deleting v1 data..."
+kubectl delete configmap portal-noticias-configmap
+kubectl delete service svc-noticias-portal-v2
+kubectl delete pod portal-de-noticias
 
 #create deployment
 echo "Applying v2 deployment"
