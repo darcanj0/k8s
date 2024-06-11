@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: sistema-noticias-configmap
+  name: news-system-configmap
 data:
   HOST_DB: db-news-service:90
   USER_DB: root
