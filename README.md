@@ -13,6 +13,7 @@ The goal of this project is to dive in core concepts, such as
 - Deployments
 - Volumes
 - Persistent Volumes
+- Persistent Volume Claims
 
 
 ## Minimum Requirements
