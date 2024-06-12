@@ -11,6 +11,8 @@ The goal of this project is to dive in core concepts, such as
 - Config Maps
 - Replica Sets
 - Deployments
+- Volumes
+- Persistent Volumes
 
 
 ## Minimum Requirements
@@ -137,3 +139,42 @@ You may check the app afterwards, by accessing the services urls if you are runn
   http://{minikube_internal_ip}:31750
 ```
 
+
+## Extra: Run pod with volume example (/template/volumes)
+
+In order to run a volume (template > volumes > pod-volume.yaml)
+
+By default, the app will try to create the folder for the volume mount. If you have issues, proceed to follow these instructions:
+
+### Linux
+
+- Make sure the volume folder exists inside the VM that hosts kubernetes, you can create it anywhere and name it as you wish*
+* if you are using minikube, for example, you can enter minikube and create the folder with: 
+```bash
+# enter minikube
+minikube ssh
+
+# create folder
+sudo mkdir /app-volunes
+```
+- Get the folder's absolute path (/app-volumes, in the example) and paste it into the (spec:volumes:hostPath) in the pod-volume.yaml
+
+```bash
+# inside /template/volumes folder
+
+kubectl apply -f ./pod-volume.yaml
+```
+
+### Windows
+
+- Go to Docker Desktop settings > General
+- Make sure WSL 2 Engine option is disabled
+- Go to Resources > FILE SHARING and select the desired folder for the volume mounting
+- Finally, edit pod-volume.yaml (spec:volumes:hostPath) and edit this value to match your shared folder
+- Apply the pod:
+
+```bash
+# inside /template/volumes folder
+
+kubectl apply -f ./pod-volume.yaml
+```
