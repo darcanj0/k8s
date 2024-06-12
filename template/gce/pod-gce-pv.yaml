@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-gce-pv
+  labels:
+    app: pod-gce-pv
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    volumeMounts:
+      - mountPath: /app-volumes/pod-gce-pv-volume
+        name: pod-gce-pv-volume
+  volumes:
+    - name: pod-gce-pv-volume
+      persistentVolumeClaim:
+        claimName: gce-pvc
