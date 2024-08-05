@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: news-portal-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: news-portal
     any-key: any-value

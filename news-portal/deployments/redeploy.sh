@@ -18,6 +18,10 @@ kubectl rollout history deployment news-portal-deployment
 echo "Annotating portal deployment"
 kubectl annotate deployment news-portal-deployment kubernetes.io/change-cause="News Portal v2.0.0 Deployment"
 
+#apply new service
+echo "Applying v2.0.0 news portal service..."
+kubectl apply -f ../services/news-portal.service.yaml
+
 echo "Checkout new deployments"
 kubectl rollout history deployment news-portal-deployment
 

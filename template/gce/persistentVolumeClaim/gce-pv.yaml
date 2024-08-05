@@ -11,4 +11,4 @@ spec:
   gcePersistendDisk:
     pdName: gce-pv-disk
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: standart
+  storageClassName: standard

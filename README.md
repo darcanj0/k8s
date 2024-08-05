@@ -4,7 +4,7 @@
 
 A Kubernetes app. Built while I was taking a series of k8s courses in Alura.
 
-The goal of this project is to dive in core concepts, such as
+The goal of this project is to dive in core concepts and features, such as
 
 - Pods
 - Services

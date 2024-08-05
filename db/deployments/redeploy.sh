@@ -18,6 +18,10 @@ kubectl rollout history deployment db-news-deployment
 echo "Annotating db deployment"
 kubectl annotate deployment db-news-deployment kubernetes.io/change-cause="DB News v2.0.0 Deployment"
 
+#apply v2.0.0 service
+echo "Applying v2.0.0 service..."
+kubectl apply -f ../services/db-news.service.yaml
+
 echo "Checkout new deployments"
 kubectl rollout history deployment db-news-deployment
 

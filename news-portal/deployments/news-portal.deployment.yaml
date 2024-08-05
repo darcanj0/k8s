@@ -19,6 +19,8 @@ spec:
           - name: news-portal-container
             image: aluracursos/portal-noticias:1
             resources:
+              requests:
+                cpu: 10m
               limits:
                 memory: "128Mi"
                 cpu: "500m"
@@ -27,3 +29,17 @@ spec:
             envFrom: 
               - configMapRef:
                   name: news-portal-configmap
+            livenessProbe:
+              httpGet:
+                path: /
+                port: 8080
+              periodSeconds: 10
+              failureTreshold: 3
+              initialDelaySeconds: 20
+            readinessProbe:
+              httpGet:
+                path: /
+                port: 8080
+              periodSeconds: 10
+              failureTreshold: 5
+              initialDelaySeconds: 3
